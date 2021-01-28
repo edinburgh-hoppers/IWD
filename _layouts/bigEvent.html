@@ -1,0 +1,77 @@
+---
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include head.html %}
+
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/bigEvents.css" type="text/css">
+
+    {% if page.styleSheet %}
+      <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/{{ page.styleSheet }}" type="text/css">
+    {% endif %}
+  </head>
+
+  <body id="bigEvent" {% if page.title == "Pet Parade" or page.subtitle == "Recordings" %} class = "petparade" {% endif %}>
+    {% if page.title == "Pet Parade" or page.subtitle == "Recordings" %}
+      <a href = "{{site.baseurl}}/ald20.html" class = "back">Back</a>
+    {% endif %}
+    {% if page.navItems %}
+      {% include nav-bigEvent.html %}
+    {% endif %}
+
+    <!-- PAGE COVER -->
+    <section class="cover">
+      <div class="cover-inner">
+        <img src="{{ '/assets/img/' | append: page.logo | relative_url }}"/>
+        <div>
+	        <h1>{{ page.title }}</h1>
+
+	        <!-- optional subtitle -->
+	        {% if page.subtitle %}
+	          <h3>{{ page.subtitle }}</h3>
+	        {% endif %}
+
+          {% if page.day %}
+	          <h4>{{ page.day }}</h4>
+          {% endif %}
+
+	        <div class="row justify-content-center align-items-center">
+            <!-- the buttons on the cover -->
+            {% for one in site.data[page.subpages][page.cover-button] %}
+            <div class="col-12 col-md-4 col-lg-3 my-2 center-horizentally">
+              <a class="button clickable shadow-sm" target="_blank" href="{{ one.link }}">{{ one.text }}</a>
+            </div>
+            {% endfor %}
+	        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE CONTENT -->
+    <main class="event-info">
+      <div class="container">
+
+        {%- for member in site.data[page.subpages][page.data] -%}
+
+          <div class="card shadow-sm border-0 mb-3">
+            <div class="card-body" id = "{% if member.id %}{{ member.id }}{% endif %}">
+              <h3 class="card-title mb-3 text-center">{{ member.title }}</h3>
+              <hr class="mb-4">
+              {% include {{ member.includeFrom }} %}
+            </div>
+          </div>
+
+        {%- endfor -%}
+
+      </div>
+    </main>
+
+    {% include footer.html %}
+
+  </body>
+  {% if page.title == 'Ada Lovelace Day'%}
+    <script src = '{{ site.baseurl }}/assets/scripts/ald20.js'>
+    </script>
+  {% endif %}
+</html>

@@ -1,0 +1,346 @@
+---
+---
+
+$jwow-ease: 1.0s cubic-bezier(0, 1, 0.5, 1);
+$jwow-ease-out: 1.5s cubic-bezier(0, 0, 0, 1);
+$hoppers-green: #3da08c;
+$hoppers-gray-light: #f8f9fa;
+$hoppers-gray: #eee;
+$hoppers-black: #444; /* Pure black text on white backgrounds can cause eye strain when users read the text over an extended period. */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400');
+
+/* GENERAL PROPERTIES */
+
+body {
+  background-color: $hoppers-gray;
+}
+
+card {
+  background-color: $hoppers-gray-light;
+}
+
+h1, h3 {
+  color: $hoppers-green;
+}
+
+h2, p {
+  color: $hoppers-black;
+}
+
+a { 
+  color: $hoppers-green;
+  font-weight: bold;
+
+  &:hover {
+  	color: $hoppers-green;
+  }
+}
+
+.nodecor {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.center-horizentally{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.shadow {
+  -webkit-box-shadow: 5px 5px 4px 2px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    5px 5px 4px 2px #ccc;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         5px 5px 4px 2px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+
+/* NAVIGATION BAR */
+
+.navbar-logo {
+  margin: -50%;
+  z-index: 1;
+
+  /* used on small screens */
+  &-sm {
+    position: absolute;
+    right: 20px;
+    top: -20px;
+    z-index: 1;
+  }
+}
+
+.nav-item {
+  transition: background $jwow-ease-out;
+  &:hover {
+    transition: background $jwow-ease;
+    background-color: $hoppers-gray;
+  }
+}
+
+.nav-link {
+  font-weight: normal;
+}
+
+#nav-cover{
+  background-color: white;
+}
+
+
+/* BUTTONS */
+
+.button {
+  color: #ffffff !important;
+  text-align: center;
+
+  background-color: $hoppers-green;
+  padding: .5rem!important;
+  border: 1.5px $hoppers-green solid;
+  border-radius: 0.25rem;
+
+  display: inline-block;
+  min-width: 150px;
+  width: 100%;
+
+  &:hover {
+    text-decoration: none;
+  };
+}
+
+.clickable {
+  transition: transform $jwow-ease-out;
+  
+  &:hover {
+    transition: transform $jwow-ease;
+    transform: scale(1.05);
+  }
+  
+  &:active {
+    transform: scale(1.07);
+  }
+}
+
+//egm 
+
+.EGM{
+  text-align: center;
+
+  .question{
+    font-weight: 700;
+  }
+  h3{
+    color: $hoppers-black;
+  }
+
+  .candidates{
+    display: inline-flex;
+  }
+
+  .card{
+    margin-top: 20px;
+    padding: 0;
+    width: 21vw;
+    background-color: rgba($hoppers-green, 0.1);
+    transition: background-color 0.3s;
+    &:hover{
+      background-color: white;
+    }
+  }
+
+  .list-group{
+    text-align: left;
+    
+    li{
+      background-color: transparent;
+      padding: 0;
+      padding-bottom: 10px;
+    }
+  }
+} 
+
+
+.highlight{
+  background-color: #3da08c;
+  font-weight: 700;
+  transition: background-color 0.2s;
+  &:hover{
+    background-color: transparent;
+  }
+}
+
+.typeform-share{
+  font-family: 'Roboto Condensed';
+}
+
+
+
+/* ANNOUNCEMENTS */
+
+.announcement {
+  margin: 0;
+  border-radius: .25rem;
+  width: 100%;
+
+  border: 1px solid #ccc;
+
+  color: #fff;
+  text-align: center;
+  background-color: $hoppers-green;
+}
+
+.announcement img {
+  width: 100%;
+}
+
+.announcement h5 {
+  padding: 0.5rem 0 0.25rem;
+}
+
+.announcement-description {
+  color: #000;
+  background-color: #fff;
+
+  padding: 0.5rem;
+
+  border: 3px solid $hoppers-green;
+  border-radius: 0.5rem;
+}
+
+.announcement-description a{
+  color: #000;
+  &:hover{
+    color: $hoppers-green;
+  }
+}
+
+
+/* EVENTS PAGE */
+
+.event-categories {
+  padding: 0 0.9rem;
+}
+
+.event-categories .button {
+  border-radius: 0;
+  margin: 0.1rem 0;
+
+  &:hover {
+    background-color: $hoppers-gray-light;
+    color: $hoppers-green !important;
+  }
+}
+
+.event-categories div:first-child a {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  margin-top: 0;
+}
+
+.event-categories div:last-child a {
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  margin-bottom: 0;
+}
+
+@media (min-width: 992px){
+  .event-categories-wrapper{
+    display: none;
+  }
+
+  .event-cards img {
+    height: 20%;
+  }
+}
+
+
+/* SPONSORS PAGE */
+
+.sponsors div {
+  margin: 0 !important;
+  padding: 0;
+}
+
+.sponsors img {
+  max-height: 200px;
+  max-width: 100%;
+  margin: 1.5rem auto;
+  display: block;
+}
+
+#tiers-intro {
+  text-align: center;
+  padding: 5vw 9vw 2vw 9vw;
+  margin-bottom: 5vh;
+  @media(max-width: 700px){
+    font-size: 13px;
+  }
+}
+
+.tiers td {
+  color: $hoppers-black;
+  text-align: center;
+  padding: 8px;
+}
+
+.tiers td:first-child{
+  text-align: left;
+  font-size: 105%;
+}
+
+.tiers img {
+  height: 25px;
+  width: 25px;
+}
+
+.tiers table{
+  @media(max-width: 700px){
+    font-size: 12px;
+  }
+}
+
+.tiers tr:nth-child(odd){background-color: $hoppers-gray-light;}
+
+.tiers tr:hover {background-color: $hoppers-gray;}
+
+.tiers th {
+  background-color: $hoppers-green;
+  color: $hoppers-gray-light;
+  padding: 5px;
+  font-size: 105%;
+}
+
+.tiers th:first-child{
+  background-color: white
+}
+
+.tiers a {
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+/* TEAM PAGE */
+
+.team-member {
+  color: $hoppers-green;
+}
+
+.team-member-role {
+  color: rgba(0,0,0,.5);
+}
+
+.join-team {
+  text-align: center;
+}
+
+.join-team p{
+  padding: 0vw 9vw 1vw 9vw;
+}
+
+
+/* ABOUT US PAGE */
+
+.aboutUsVoices p {
+  margin-bottom: 0.7rem;
+}

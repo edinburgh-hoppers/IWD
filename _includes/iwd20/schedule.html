@@ -1,0 +1,49 @@
+{% assign img_div = "d-flex flex-row justify-content-around flex-wrap align-content-between" %}
+{% assign img_path = "/assets/img/events/iwd20-schedule/" %}
+
+<div id="schedule">
+  <table>
+    {%- for member in site.data[page.subpages][page.schedule] -%}
+
+      <tr>
+        <td class="time {% unless member.content or member.last == "true" %}bd-b{% endunless %}">{{ member.time }}</td>
+        <td class="{% unless member.content or member.last == "true" %}bd-b{% endunless %}">{{ member.description }}</h5>
+      </tr>
+
+      {%- if member.content -%}
+      <tr>
+        <td colspan="2" class="bd-b">
+          {%- if member.content == "addContentBreakfast" -%}
+            <div class="{{ img_div }} breakfast">
+              <img src="{{ site.baseurl }}{{ img_path }}breakfast.png" alt="Information about Breakfast">
+            </div>
+          {%- elsif member.content == "addContentKate" -%}
+            <div class="{{ img_div }} breakfast">
+              <img src="{{ site.baseurl }}{{ img_path }}Kate.png" alt="Information about Kate">
+            </div>
+          {%- elsif member.content == "addContentTalks" -%}
+            <div class="{{ img_div }} portrait-imgs">
+              <img class="mb-3 mb-md-0" src="{{ site.baseurl }}{{ img_path }}Toni.png" alt="Information about Toni's talk">
+              <img class="mb-3 mb-md-0" src="{{ site.baseurl }}{{ img_path }}Nadia.png" alt="Information about Nadia's talk">
+              <img src="{{ site.baseurl }}{{ img_path }}Jean.png" alt="Information about Jean's talk">
+            </div>
+          {%- elsif member.content == "addContentWorkshops" -%}
+            <div class="{{ img_div }} info-imgs">
+              <img class="mb-2 mb-lg-0" src="{{ site.baseurl }}{{ img_path }}hubspot_workshop.png" alt="Information about workshop by HubSpot">
+              <img src="{{ site.baseurl }}{{ img_path }}GDG_workshop.png" alt="Information about workshop by GDG">
+            </div>
+          {%- elsif member.content == "addContentLogos" -%}
+            <div class="{{ img_div }} logos">
+              <img class="mb-2 mb-md-0" src="{{ site.baseurl }}/assets/img/sponsors/freeagent.png" alt="FreeAgent">
+              <img class="mb-2 mb-md-0" src="{{ site.baseurl }}/assets/img/sponsors/HubSpot.png" alt="HubSpot">
+              <img class="mb-2 mb-md-0" src="{{ site.baseurl }}/assets/img/sponsors/smartsheet.png" alt="smartsheet">
+              <img src="{{ site.baseurl }}/assets/img/sponsors/modulr.png" alt="modulr">
+            </div>
+          {%- endif -%}
+        </td>
+      </tr>
+      {%- endif -%}
+
+    {%- endfor -%}
+  </table>
+</div>

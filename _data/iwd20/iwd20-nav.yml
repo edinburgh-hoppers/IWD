@@ -1,0 +1,29 @@
+- text: "About Hoppers"
+  href: 
+
+- text: "Schedule"
+  href: "#schedule"
+
+- text: "Instructions for HubSpot Workshop"
+  href: "#reactWorkshop"
+
+- text: "Challenges"
+  href: "#challenges"
+    
+- text: "Location"
+  href: "#location"
+
+- text: "Poster Competition"
+  href: "#poster"
+
+- text: "FAQ"
+  href: "#faq"
+
+- text: "Sponsors"
+  href: "#sponsors"
+
+- text: "Partners"
+  href: "#partners"
+
+- text: "Contact Us"
+  href: "#contact"

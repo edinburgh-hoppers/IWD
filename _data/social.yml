@@ -1,0 +1,23 @@
+- name: "Email"
+  description: "Feel free to write us an email to edinburghhoppers@gmail.com!"
+  link : "mailto:edinburghhoppers@gmail.com"
+  
+- name: "facebook"
+  img: "f_logo.png"
+  link: "https://www.facebook.com/edinburghhopppers/?modal=admin_todo_tour"
+
+- name: "LinkedIn"
+  img: "In_logo.png"
+  link: "https://www.linkedin.com/company/hoppers-society-women-in-tech/"
+
+- name: "Instagram"
+  img: "glyph-logo.png"
+  link: "https://www.instagram.com/edinburghuniversityhoppers/"
+
+- name: "twitter"
+  img: "Twitter_icon.png"
+  link: "https://twitter.com/edi_hoppers"
+
+- name: "YouTube"
+  img: "yt_social_icon.png"
+  link: "https://www.youtube.com/channel/UC8kHxhiU2BHaKPQThGRtFfQ"

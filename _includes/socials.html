@@ -1,0 +1,38 @@
+{% assign socials = site.data.social %}
+
+<!-- Socials without link -->
+<div class="row justify-content-center">
+  {% for item in socials %}
+    {% if item.name == "Email" %}
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="announcement">
+
+          <h5>{{ item.name }}</h5>
+
+          <div class="announcement-description">
+            <a href="{{ item.link }}" class="nodecor emailLink" target="_blank" >
+              <h6>{{ item.description }}</h6>
+            <a>
+          </div>
+
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<!-- Socials with link -->
+<div class="row justify-content-center align-items-center announcement p-3 col-12 col-md-7 col-lg-5 col-xl-4 m-auto"
+style="padding: 0!important;" >
+  {% for item in socials %}
+    {% unless item.name == 'Email' %}
+      <div class="col-3 my-3">
+        <a href="{{ item.link }}" class="nodecor" target="_blank">
+          <div class="clickable">
+            <img style="width:100%;" src="{{ site.baseurl }}/assets/img/socials/{{ item.img }}"/>
+          </div>
+        </a>
+      </div>
+    {% endunless %}
+  {% endfor %}
+</div>
