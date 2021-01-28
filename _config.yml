@@ -17,7 +17,7 @@ title: Edinburgh Hoppers - IWD20
 email: edinburghhoppers@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   International Women's Day 2020 with the Edinburgh Hoppers
-baseurl: "/iwd20" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "http://hoppers.inf.ed.ac.uk/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ~
 github_username:  ~
